@@ -33,7 +33,7 @@ def calculate_demographic_data(print_data=True):
 
 # QUESTION 4: 
     # "What percentage of people with advanced education"
-    # (`Bachelors`, `Masters`, or `Doctorate`) make more than 50K?""
+    # (`Bachelors`, `Masters`, or `Doctorate`) make more than 50K?"
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
     # Extract all the people with higher degrees and make their
@@ -156,3 +156,15 @@ def calculate_demographic_data(print_data=True):
 
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+What's going through my head?
+1. PCR <- tick 
+2. Effourt <- tick 
+3. Approach <- nope 
+
+I feel like the whole thing looks too hard to all do at once. Approach. So -
+
+We may as well not try at all, right? WRONG!
+
+Approach. dx's. I'm looking at the whole thing. I should just be looking at going from where we are now to the next step, which is understanding the next part. 
+
