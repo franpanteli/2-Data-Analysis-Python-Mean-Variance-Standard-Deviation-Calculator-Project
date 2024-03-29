@@ -1,41 +1,41 @@
 import pandas as pd
 
 def calculate_demographic_data(print_data=True):
-    #---------------------------- TASK 1----------------------------------------
     # Read data from file
     df = pd.read_csv('data/adult.data.csv')
-    #---------------------------- TASK 1----------------------------------------
 
-    #---------------------------- TASK 2----------------------------------------
-    # How many of each race are represented in this dataset?
-    # This should be a Pandas series with race names as the index labels.
+# QUESTION 1: 
+    # "How many of each race are represented in this dataset?
+    # This should be a Pandas series with race names as the index labels."
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
     race_count = df['race'].value_counts()
-    #---------------------------- TASK 2----------------------------------------
 
-    #---------------------------- TASK 3----------------------------------------
-    # What is the average age of men?
+# QUESTION 2: "What is the average age of men?"
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
     # Extract the column of SEX
     column_sex = df['sex']
     # Extract the column of AGE
     column_age = df['age']
     # Calculate MEAN of AGE column where SEX is MALE
     average_age_men = round((column_age[column_sex=='Male']).mean(),1)
-    #---------------------------- TASK 3----------------------------------------
 
-    #---------------------------- TASK 4----------------------------------------
-    # What is the percentage of people who have a Bachelor's degree?
+# QUESTION 3: "What is the percentage of people who have a Bachelor's degree?"
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
     # Number of people whose EDUCATION is bachelors
     x = sum(df['education']=='Bachelors')
     # Percentage of those people
     y = (x/df.shape[0])*100
     # Rounding the percentage to one decimal position
     percentage_bachelors = round(y,1)
-    #---------------------------- TASK 4----------------------------------------
 
-    #---------------------------- TASK 5----------------------------------------
-    # What percentage of people with advanced education
-    # (`Bachelors`, `Masters`, or `Doctorate`) make more than 50K?
-
+# QUESTION 4: 
+    # "What percentage of people with advanced education"
+    # (`Bachelors`, `Masters`, or `Doctorate`) make more than 50K?""
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
     # Extract all the people with higher degrees and make their
     # separate dataframe
     higher_education = df[(df['education']=='Bachelors') | \
@@ -47,10 +47,10 @@ def calculate_demographic_data(print_data=True):
     y = (x/higher_education.shape[0])*100
     # Rounding to one decimal position
     higher_education_rich = round(y,1)
-    #---------------------------- TASK 5----------------------------------------
 
-    #---------------------------- TASK 6----------------------------------------
-    # What percentage of people without advanced education make more than 50K?
+# QUESTION 5: "What percentage of people without advanced education make more than 50K?"
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
     # Extract all the people who do not have higher degrees and make their
     # separate dataframe
     lower_education = df[(df['education']!='Bachelors') & \
@@ -63,17 +63,17 @@ def calculate_demographic_data(print_data=True):
     y = (x/lower_education.shape[0])*100
     # Rounding to one decimal position
     lower_education_rich = round(y,1)
-    #---------------------------- TASK 6----------------------------------------
 
-    #---------------------------- TASK 7----------------------------------------
-    # What is the minimum number of hours a person works per week (hours-per-week feature)?
+# QUESTION 6: "What is the minimum number of hours a person works per week (hours-per-week feature)?"
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
     min_work_hours = df['hours-per-week'].min()
-    #---------------------------- TASK 7----------------------------------------
 
-    #---------------------------- TASK 8----------------------------------------
-    # What percentage of the people who work the minimum number of hours per
-    # week have a salary of >50K?
-
+# QUESTION 7:     
+    # "What percentage of the people who work the minimum number of hours per
+    # week have a salary of >50K?"
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
     # Extract the hours_per_week and salary columns from the Dataframe
     work_column = df['hours-per-week']
     salary_column = df['salary']
@@ -86,9 +86,10 @@ def calculate_demographic_data(print_data=True):
 
     # Calculate their Percentage
     rich_percentage = int((num_min_workers/n.shape[0])*100)
-    #---------------------------- TASK 8----------------------------------------
 
-    #---------------------------- TASK 9----------------------------------------
+# QUESTION 8: "What country has the highest percentage of people that earn >50K and what is that percentage?"
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
     # The following statement will return a dataframe based on the salary
     # column >50K
     rich_ = df[df['salary']=='>50K']
@@ -107,9 +108,10 @@ def calculate_demographic_data(print_data=True):
     country_name = y.index[y==y.max()]
     highest_earning_country = country_name[0]
     highest_earning_country_percentage = round(y.max(),1)
-    #---------------------------- TASK 9----------------------------------------
 
-    #---------------------------- TASK 10----------------------------------------
+# QUESTION 9: "Identify the most popular occupation for those who earn >50K in India."
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
     # Make a new Dataframe where the native country is INDIA and SALARY is >50K
     rich_indians = df[(df['native-country']=='India') & (df['salary']=='>50K')]
 
@@ -120,8 +122,10 @@ def calculate_demographic_data(print_data=True):
     # Get the name of the first occupation using index name at first position
     # Identify the most popular occupation for those who earn >50K in India.
     top_IN_occupation = rich_indians_occupations.index[0]
-    #---------------------------- TASK 10----------------------------------------
 
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
     # DO NOT MODIFY BELOW THIS LINE
 
     if print_data:
@@ -149,3 +153,6 @@ def calculate_demographic_data(print_data=True):
         highest_earning_country_percentage,
         'top_IN_occupation': top_IN_occupation
     }
+
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
