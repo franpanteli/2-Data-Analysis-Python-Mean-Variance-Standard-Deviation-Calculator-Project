@@ -4,9 +4,5 @@ I independently completed freeCodeCamp's [Data Analysis with Python](https://www
 
 ### To Clone This Repository
 ```
-git clone https://github.com/franpanteli/Data-Analysis-Python-Mean-Variance-Standard-Deviation-Calculator-Project.git
-```
-### To Clone This Repository
-```
-git clone https://github.com/franpanteli/Data-Analysis-Python-Demographic-Data-Analyzer-Project.git
+git clone https://github.com/franpanteli/Data-Analysis-Python-Demographic-Data-Analyser-Project.git
 ```
